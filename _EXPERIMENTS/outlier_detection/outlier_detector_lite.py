@@ -348,13 +348,13 @@ class OutlierDetectorLite:
                 metrics[method] = []
 
             for run in range(0, NO_RUNS):
-                for m in metrics.keys():
+                for m in metrics:
                     cur = results[algo][run]["evaluation"][m]
 
                     metrics[m].append(cur)
 
             print(algo)
-            for m in metrics.keys():
+            for m in metrics:
                 print("   ", m, np.mean(metrics[m]), "+/-", np.std(metrics[m]))
 
     def convert_norm_feature(self, norm, feat):
@@ -772,7 +772,7 @@ class OutlierDetectorLite:
         best_results = {}
         for i in range(len(dataset_names)):
             for algo in values[i].keys():
-                if algo not in best_results.keys():
+                if algo not in best_results:
                     best_results[algo] = values[i][algo]
                 else:
                     if values[i][algo]["mean"] > best_results[algo]["mean"]:
@@ -881,7 +881,7 @@ class OutlierDetectorLite:
         best_alg = ""
         for i in range(len(dataset_names)):
             for algo in values[i].keys():
-                if dataset_names[i] not in best_results.keys():
+                if dataset_names[i] not in best_results:
                     best_results[dataset_names[i]] = values[i][algo]
                     best_alg = algo
                 else:
