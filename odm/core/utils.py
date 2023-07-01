@@ -19,7 +19,7 @@ def print_properties(tite, **properties) -> None:
     **properties
         The properties of the runner.
     """
-    max_key_length = max([len(key) for key in properties.keys()])
+    max_key_length = max([len(key) for key in properties])
     max_val_length = max([len(str(val)) for val in properties.values()])
     max_line_length = max_key_length + max_val_length + 3
     header_length = (
