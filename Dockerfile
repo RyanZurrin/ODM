@@ -1,5 +1,5 @@
 # Use an official Tensorflow runtime as a parent image
-FROM tensorflow/tensorflow:latest-gpu-py3-jupyter
+FROM tensorflow/tensorflow:2.2.2-gpu-py3-jupyter
 
 # Set the working directory in the container to /app
 WORKDIR /app
